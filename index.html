@@ -38,24 +38,8 @@
             text-align: center;
             background-color: #7f5f9f;
         }
-        .game-card {
-            display: inline-block;
-            width: 200px;
-            height: 250px;
-            background-color: #8e6ba7;
-            margin: 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            color: white;
-            text-align: center;
-        }
-        .game-card img {
-            width: 100%;
-            height: 160px;
-            border-radius: 10px 10px 0 0;
-        }
-        .game-card h3 {
-            margin-top: 10px;
+        .game-embed {
+            margin: 20px 0;
         }
         footer {
             background-color: #5e3b8f;
@@ -63,29 +47,12 @@
             text-align: center;
             padding: 20px 0;
         }
-        iframe.fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        iframe {
+            width: 800px;
+            height: 600px;
             border: none;
-            z-index: 1000;
         }
     </style>
-    <script>
-        function openFullscreen(url) {
-            const iframe = document.createElement('iframe');
-            iframe.src = url;
-            iframe.className = 'fullscreen';
-            iframe.setAttribute('allowfullscreen', '');
-            document.body.appendChild(iframe);
-
-            iframe.onclick = () => {
-                iframe.remove();
-            };
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -95,41 +62,42 @@
     <div class="section">
         <h2>Games</h2>
         <div id="games-container">
-            <!-- Games will be dynamically added here -->
+            <div class="game-embed">
+                <h3>Krunker.io</h3>
+                <iframe src="https://krunker.io/" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Agar.io</h3>
+                <iframe src="https://agar.io/" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Slither.io</h3>
+                <iframe src="https://slither.io/" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Shell Shockers</h3>
+                <iframe src="https://shellshock.io/" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Diep.io</h3>
+                <iframe src="https://diep.io/" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Stickman Parkour</h3>
+                <iframe src="https://cloud.onlinegames.io/games/2024/construct/219/stickman-parkour/index-og.html" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Block Blast</h3>
+                <iframe src="https://cloud.onlinegames.io/games/2024/unity3/block-blast/index-og.html" allowfullscreen></iframe>
+            </div>
+            <div class="game-embed">
+                <h3>Slope 3</h3>
+                <iframe src="https://games-online.io/game/Slope3/" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 insert website name here</p> 
     </footer>
-    <script>
-        const games = [
-            { name: "Krunker.io", url: "https://krunker.io/", img: "https://via.placeholder.com/200x160" },
-            { name: "Agar.io", url: "https://agar.io/", img: "https://via.placeholder.com/200x160" },
-            { name: "Slither.io", url: "https://slither.io/", img: "https://via.placeholder.com/200x160" },
-            { name: "Shell Shockers", url: "https://shellshock.io/", img: "https://via.placeholder.com/200x160" },
-            { name: "Diep.io", url: "https://diep.io/", img: "https://via.placeholder.com/200x160" },
-        ];
-
-        for (let i = 6; i <= 400; i++) {
-            games.push({
-                name: `Game ${i}`,
-                url: `https://example.com/game${i}`,
-                img: "https://via.placeholder.com/200x160"
-            });
-        }
-
-        const gamesContainer = document.getElementById('games-container');
-
-        games.forEach(game => {
-            const gameCard = document.createElement('div');
-            gameCard.className = 'game-card';
-            gameCard.innerHTML = `
-                <img src="${game.img}" alt="${game.name}">
-                <h3>${game.name}</h3>
-            `;
-            gameCard.onclick = () => openFullscreen(game.url);
-            gamesContainer.appendChild(gameCard);
-        });
-    </script>
 </body> 
 </html>
